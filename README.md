@@ -27,9 +27,9 @@ Executes sudo find / -iname "*<query>*" 2>/dev/null to scan protected directorie
 
 Fast Installation
 
-bash
+
+
 git clone https://github.com/kglkdfg/pacman-ppm && cd ppm && chmod +x install.sh && ./install.sh
-Используйте код с осторожностью.
 Note: Restart your terminal after installation.
 
 License
