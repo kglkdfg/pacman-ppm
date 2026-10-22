@@ -37,7 +37,7 @@ The list of available commands in **PPM** includes:
 To deploy **PPM** on your system, open your terminal and run the following command:
 
 ```bash
-git clone https://github.com && cd ppm && chmod +x install.sh && ./install.sh
+git clone https://github.com/kglkdfg/pacman-ppm && cd ppm && chmod +x install.sh && ./install.sh
 ```
 
 > 💡 **Note:** After the installation completes, please **restart your terminal** or open a new tab to apply the changes.
