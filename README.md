@@ -19,7 +19,7 @@ Available Commands
 • ppm search [query] — Searches remote database (pacman -Ss).
 • ppm clean — Cleans package cache (sudo pacman -Sc).
 • ppm build [package] — Builds and installs from AUR (yay -S).
-• ppm sdir [name] — Case-insensitive global search for files or directories.
+
 
 Under the Hood: How ppm sdir Works
 
