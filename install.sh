@@ -5,7 +5,7 @@
 
 set -Eeuo pipefail
 
-if [[ "\${EUID}" -eq 0 ]]; then
+if [[ "${EUID}" -eq 0 ]]; then
     echo "Не запускай установщик от root. Запусти его от обычного пользователя." >&2
     exit 1
 fi
@@ -18,8 +18,8 @@ if ! command -v sudo >/dev/null 2>&1; then
     exit 1
 fi
 
-CURRENT_SHELL="$(basename -- "\${SHELL:-}")"
-echo "🚀 Установка PPM для оболочки: \${CURRENT_SHELL:-неизвестна}"
+CURRENT_SHELL="$(basename -- "${SHELL:-}")"
+echo "🚀 Установка PPM для оболочки: ${CURRENT_SHELL:-неизвестна}"
 echo "📦 Проверка зависимостей..."
 sudo pacman -S --needed git base-devel
 
@@ -43,7 +43,7 @@ ppm() {
             sudo pacman -Rns -- "$@"
             ;;
         update)
-            if [[ "\${1-}" == "full" ]]; then
+            if [[ "${1-}" == "full" ]]; then
                 if command -v yay >/dev/null 2>&1; then
                     yay -Syu
                 else
@@ -139,7 +139,7 @@ complete -c ppm -n "__fish_use_subcommand" -a "install remove update search clea
 FISH_COMP_EOF
         ;;
     *)
-        echo "Не удалось определить оболочку: \${CURRENT_SHELL:-пусто}. Поддерживаются Bash, Zsh и Fish." >&2
+        echo "Не удалось определить оболочку: ${CURRENT_SHELL:-пусто}. Поддерживаются Bash, Zsh и Fish." >&2
         exit 1
         ;;
 esac
